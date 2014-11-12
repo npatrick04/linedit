@@ -28,7 +28,7 @@
 
 (defun set-column-address (n current)
   (if nil
-      (ti:tputs ti:column-address n)
+      (ti:tputs (ti:column-address n))
       (cond ((< n current)
 	     (loop repeat (- current n) 
 		   do (ti:tputs ti:cursor-left)))
@@ -70,7 +70,7 @@
 
 (defun place-point (&key up col)
   (loop repeat up do (ti:tputs ti:cursor-up))
-  (ti:tputs ti:column-address col))
+  (ti:tputs (ti:column-address col)))
 
 (defun paren-style ()
   (concat
